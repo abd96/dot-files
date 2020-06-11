@@ -25,33 +25,43 @@ augroup ProjectDrawer
 augroup END
 
 
-
+"Define the leader key "
+let mapleader = " "
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'Valloric/YouCompleteMe'
-"Plug 'lervag/vimtex'"
+    Plug 'morhetz/gruvbox'
+    "Plug 'Valloric/YouCompleteMe'"
+    "Plug 'lervag/vimtex'"
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
-
+"Scheme Colors themes settings"
 colorscheme gruvbox
 set background=dark
 
+"Background transperanc"
+hi Normal guibg=NONE ctermbg=NONE
 
 
+"File Navigation settings"
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nnoremap <C-p> :GFiles<CR>
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
 
 
-let mapleader = " "
 
-
-"Latex Configs"
+"latex stuff"
+let g:coc_disable_startup_warning = 1
 map F :! pdflatex %<CR><CR>
 map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR>
+noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
 
 
