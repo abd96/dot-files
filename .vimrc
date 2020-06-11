@@ -30,7 +30,8 @@ augroup END
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
-"Plug 'Valloric/YouCompleteMe'"
+Plug 'Valloric/YouCompleteMe'
+"Plug 'lervag/vimtex'"
 call plug#end()
 
 
@@ -46,4 +47,11 @@ endif
 
 
 let mapleader = " "
+
+
+"Latex Configs"
+map F :! pdflatex %<CR><CR>
+map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR>
+"map <F10> :!pdflatex % && start %:r.pdf<CR>"
+
 
