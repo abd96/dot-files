@@ -1,3 +1,4 @@
+
 syntax on 
 
 set tabstop=4 softtabstop=4
@@ -10,9 +11,7 @@ set smartcase
 set noswapfile
 set incsearch
 set colorcolumn=80
-
-
-
+set relativenumber
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
