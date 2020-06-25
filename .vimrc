@@ -13,6 +13,11 @@ set incsearch
 set colorcolumn=80
 set relativenumber
 
+"terminal size and splitting "
+set splitbelow
+set termwinsize=10x0
+"set termsize"
+
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
