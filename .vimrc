@@ -1,3 +1,4 @@
+
 syntax on 
 
 set tabstop=4 softtabstop=4
@@ -10,8 +11,12 @@ set smartcase
 set noswapfile
 set incsearch
 set colorcolumn=80
+set relativenumber
 
-
+"terminal size and splitting "
+set splitbelow 
+set termwinsize =10x0
+"set termsize should also word"
 
 
 let g:netrw_banner = 0
@@ -36,6 +41,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'turbio/bracey.vim'
+    Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "Scheme Colors themes settings"
@@ -64,4 +71,5 @@ map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
 
-
+"Configure scheme for lightline"
+let g:lightline = {'colorscheme': 'jellybeans',}
