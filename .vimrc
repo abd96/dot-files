@@ -14,19 +14,43 @@ set colorcolumn=80
 set relativenumber
 
 "terminal size and splitting "
-set splitbelow
-set termwinsize=10x0
-"set termsize"
+set splitbelow 
+set termwinsize =10x0
+"set termsize should also word"
+
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 25
+let g:netrw_winsize = 14 
+set autochdir 
+
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+noremap <silent> <C-E> :call ToggleNetrw()<CR>
+
 augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
 augroup END
+
+
 
 
 "Define the leader key "
@@ -40,6 +64,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'turbio/bracey.vim'
+    Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "Scheme Colors themes settings"
@@ -68,4 +94,5 @@ map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
 
-
+"Configure scheme for lightline"
+let g:lightline = {'colorscheme': 'jellybeans',}
