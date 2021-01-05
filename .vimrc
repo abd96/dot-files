@@ -51,8 +51,6 @@ augroup ProjectDrawer
 augroup END
 
 
-
-
 "Define the leader key "
 let mapleader = " "
 
@@ -61,11 +59,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     "Plug 'Valloric/YouCompleteMe'"
     "Plug 'lervag/vimtex'"
+    Plug 'junegunn/goyo.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'turbio/bracey.vim'
     Plug 'itchyny/lightline.vim'
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 "Scheme Colors themes settings"
@@ -89,9 +89,10 @@ endif
 
 "latex stuff"
 let g:coc_disable_startup_warning = 1
-map F :! pdflatex %<CR><CR>
-map S :! mupdf $(echo % \| sed 's/tex$/pdf/') & disown<CR>
-noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
+"map F :! pdflatex %<CR><CR>
+"map S :! evince $(echo % \| sed 's/tex$/pdf/') & disown<CR>
+"noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
+map F :LLPStartPreview <CR><CR>
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
 
 "Configure scheme for lightline"
