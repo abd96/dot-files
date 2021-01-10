@@ -66,12 +66,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'turbio/bracey.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+    Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 call plug#end()
+
+" For markdown-preview 
+call mkdp#util#install()
 
 "Scheme Colors themes settings"
 colorscheme gruvbox
 set background=dark
-
+set t_Co=256
 "Background transperanc"
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -97,3 +102,16 @@ map F :LLPStartPreview <CR><CR>
 
 "Configure scheme for lightline"
 let g:lightline = {'colorscheme': 'jellybeans',}
+
+
+
+
+"""""""" For Handling Ctrl-ArrowKeys in Vim 
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
