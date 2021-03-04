@@ -20,7 +20,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 
 #### Markdown 
 
-* Enable with :MarkdownPreview 
+* Enable with `:MarkdownPreview` or with `<leader> md` 
 * Opens a markdown in your browser and it will update while typing. Also cursor will be tracked. Thanks markdown-preview!
 
 #### Latex 
