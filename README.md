@@ -20,15 +20,15 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 
 #### Markdown 
 
-* Enable with :MarkdownPreview 
+* Enable with `:MarkdownPreview` or with `<leader> md` 
 * Opens a markdown in your browser and it will update while typing. Also cursor will be tracked. Thanks markdown-preview!
 
 #### Latex 
 
-* Enable with <F> 
+* Enable with `<F>` 
 * Opens pdf youre working on and can live update while coding in latex. 
 
-### COC 
+#### COC 
  * COC is added as a Plugin and will be installed (See Instructions)
  * For setting up COC for a programming language use: `:CocInstall coc-python coc-java coc-json .....`
  * After installing language support set the linter to flake8 using `:CocCommand python.setInterpreter`
