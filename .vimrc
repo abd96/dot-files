@@ -1,4 +1,3 @@
-
 syntax on 
 
 set tabstop=4 softtabstop=4
@@ -54,7 +53,8 @@ augroup END
 "Define the leader key "
 let mapleader = " "
 
-
+"Vim Plug"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     "Plug 'Valloric/YouCompleteMe'"
@@ -69,9 +69,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 call plug#end()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" For markdown-preview 
+" For markdown-preview and settings 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call mkdp#util#install()
+nnoremap <leader>md :MarkdownPreview<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Scheme Colors themes settings"
 colorscheme gruvbox
@@ -81,32 +86,43 @@ set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
 
+"COC Settings"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "File Navigation settings"
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
 nnoremap <C-p> :GFiles<CR>
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"FZF Settings" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> <C-F> :Files<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 "latex stuff"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_disable_startup_warning = 1
 "map F :! pdflatex %<CR><CR>
 "map S :! evince $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 "noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 map F :LLPStartPreview <CR><CR>
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Configure scheme for lightline"
 let g:lightline = {'colorscheme': 'jellybeans',}
 
 
-
-
-"""""""" For Handling Ctrl-ArrowKeys in Vim 
+"""""""" For Handling Ctrl-ArrowKeys in Vim while using TMUX
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
@@ -114,5 +130,3 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
-
-noremap <silent> <C-F> :Files<CR>
