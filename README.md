@@ -32,3 +32,4 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
  * COC is added as a Plugin and will be installed (See Instructions)
  * For setting up COC for a programming language use: `:CocInstall coc-python coc-java coc-json .....`
  * After installing language support set the linter to flake8 using `:CocCommand python.setInterpreter`
+ * Currently installed extensions : coc-html, coc-texlab, coc-java, coc-json, coc-python, coc-tsserver
