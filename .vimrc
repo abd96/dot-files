@@ -148,7 +148,6 @@ let g:lightline = {'colorscheme': 'jellybeans',
 
 "always show statusline"
 set laststatus=2
-"Show file name"
 
 """""""" For Handling Ctrl-ArrowKeys in Vim while using TMUX
 if &term =~ '^screen'
