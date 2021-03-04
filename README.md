@@ -25,7 +25,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 
 #### Latex 
 
-* Enable with <F> 
+* Enable with `<F>` 
 * Opens pdf youre working on and can live update while coding in latex. 
 
 #### COC 
