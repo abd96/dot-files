@@ -28,7 +28,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 * Enable with <F> 
 * Opens pdf youre working on and can live update while coding in latex. 
 
-### COC 
+#### COC 
  * COC is added as a Plugin and will be installed (See Instructions)
  * For setting up COC for a programming language use: `:CocInstall coc-python coc-java coc-json .....`
  * After installing language support set the linter to flake8 using `:CocCommand python.setInterpreter`
