@@ -140,8 +140,15 @@ map F :LLPStartPreview <CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Configure scheme for lightline"
-let g:lightline = {'colorscheme': 'jellybeans',}
+let g:lightline = {'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 
+"always show statusline"
+set laststatus=2
+"Show file name"
 
 """""""" For Handling Ctrl-ArrowKeys in Vim while using TMUX
 if &term =~ '^screen'
