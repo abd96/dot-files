@@ -115,3 +115,4 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
+noremap <silent> <C-F> :Files<CR>
