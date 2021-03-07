@@ -2,14 +2,14 @@
 This is my personal configs for a fast workflow. Please wear your seat belt before using the configs, as you are going to fly while coding! 
 
 
-### TMUX
+### TMUX (`~/.tmux.conf`)
 I use TMUX to open two panes, one for compiling source code and the other for writing code. Yes keep it minimal. 
 * Prefix key : <CTRL + a>
 * Vim Mode enabled using : <CTRL + a + [> 
 
 **ATTENSION** : i can't figure out how to copy from vim in the first pane into the other. If you know an easy way, please hit me up! 
 
-### VIM
+### VIM (`~/.vimrc`) or NVIM (`~/.config/nvim/init.vim`)
 
 fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more! 
 
