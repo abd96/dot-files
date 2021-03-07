@@ -13,6 +13,7 @@ set colorcolumn=80
 set relativenumber
 set hidden 
 set scrolloff=8
+set nohlsearch
 "terminal size and splitting "
 set nocompatible
 filetype off 
@@ -61,7 +62,7 @@ let mapleader = " "
 "Vim Plug"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-    Plug 'morhetz/gruvbox'
+    Plug 'gruvbox-community/gruvbox'
     "Plug 'Valloric/YouCompleteMe'"
     "Plug 'lervag/vimtex'"
     Plug 'kassio/neoterm'
@@ -74,6 +75,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+    Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
