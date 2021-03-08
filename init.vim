@@ -14,23 +14,13 @@ set relativenumber
 set hidden 
 set scrolloff=8
 set nohlsearch
-"terminal size and splitting "
-set nocompatible
-filetype off 
-let &runtimepath.='~/.vim/bundle/neoterm'
-filetype plugin on 
-
-
-let g:neoterm_default_mod = 'belowright'
-let g:neoterm_siz=9
+set autochdir 
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 14 
-set autochdir 
-
+let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
 
 function! ToggleNetrw()
@@ -64,21 +54,37 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
     Plug 'gruvbox-community/gruvbox'
     "Plug 'Valloric/YouCompleteMe'"
-    "Plug 'lervag/vimtex'"
-    Plug 'kassio/neoterm'
-    Plug 'junegunn/goyo.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    "Plug 'lervag/vimtex'" 
+    Plug 'kassio/neoterm' " Neo terminal 
+    Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion : Autocompletion and more 
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder 
     Plug 'junegunn/fzf.vim'
-    Plug 'turbio/bracey.vim'
-    Plug 'itchyny/lightline.vim'
-    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-    Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-    Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+    Plug 'itchyny/lightline.vim' " a fancy bar to show current file path and neo vim mode 
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " LaTeX plugIn : Live Preview 
+    Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'  
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
+    Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"terminal size and splitting "
+set nocompatible
+filetype off 
+let &runtimepath.='~/.vim/bundle/neoterm'
+filetype plugin on 
 
+let g:neoterm_default_mod = 'belowright'
+let g:neoterm_size=11
+let g:neoterm_fixedsize='1'
+let g:neoterm_autoscroll='1'
+let g:neoterm_autoinsert=0
+
+" remaps for neoterm 
+nnoremap <leader>tt :Ttoggle<CR>
+nnoremap <leader>tn :Tnew<CR>
+nnoremap <leader>to :Topen<CR>
+nnoremap <leader>tc :Tclose<CR>
+tnoremap <C-c> <C-\><C-n><CR>
 " For markdown-preview and settings 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call mkdp#util#install()
