@@ -84,7 +84,7 @@ nnoremap <leader>tt :Ttoggle<CR>
 nnoremap <leader>tn :Tnew<CR>
 nnoremap <leader>to :Topen<CR>
 nnoremap <leader>tc :Tclose<CR>
-tnoremap <C-c> <C-\><C-n><CR>
+tnoremap <C-t> <C-\><C-n><CR>
 " For markdown-preview and settings 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call mkdp#util#install()
