@@ -1,5 +1,6 @@
-# dot-files
-This is my personal configs for a fast workflow. Please wear your seat belt before using the configs, as you are going to fly while coding! 
+# dot-files (Feel free to steal anything)
+This is my personal configs for a fast workflow. Please wear your seat belt before using the configs, as you are going to fly while coding!   
+
 
 
 ### TMUX (`~/.tmux.conf`)
@@ -32,4 +33,16 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
  * COC is added as a Plugin and will be installed (See Instructions)
  * For setting up COC for a programming language use: `:CocInstall coc-python coc-java coc-json .....`
  * After installing language support set the linter to flake8 using `:CocCommand python.setInterpreter`
- * Currently installed extensions : coc-html, coc-texlab, coc-java, coc-json, coc-python, coc-tsserver
+ * Currently installed extensions : coc-html, coc-texlab, coc-java, coc-json, coc-pyright, coc-tsserver
+ * `:CocList` : list all possible features (CTRL-{j,k} to navigate)
+ * `:CocConfig` : to open config for coc (coc-settings.json)
+ * `CocInstall` : to install extension 
+ * `CocUninstall` : to uninstall extension 
+#### Bracey 
+ * Open current html page you you are working on in browser and live updating it. 
+ * Enable with `:Bracey`
+ * `:BraceyStop` to stop server 
+
+#### Use jkhl globally 
+* Save Xmodmap_GlobalvimStyle to your home directory
+* Copy startup.conf to /etc/init/
