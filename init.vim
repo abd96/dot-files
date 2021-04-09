@@ -1,3 +1,4 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on 
 
 set tabstop=4 softtabstop=4
@@ -22,6 +23,7 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! ToggleNetrw()
     if g:NetrwIsOpen
@@ -54,7 +56,8 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
     Plug 'gruvbox-community/gruvbox'
     "Plug 'Valloric/YouCompleteMe'"
-    "Plug 'lervag/vimtex'" 
+    Plug 'tpope/vim-surround'
+    Plug 'lervag/vimtex'
     Plug 'kassio/neoterm' " Neo terminal 
     Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion : Autocompletion and more 
@@ -137,7 +140,28 @@ endfunction
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -145,7 +169,6 @@ nmap <leader>f  <Plug>(coc-format-selected)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <C-F> :Files<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 "latex stuff"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,6 +178,8 @@ let g:coc_disable_startup_warning = 1
 "noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 map F :LLPStartPreview <CR><CR>
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
+let g:tex_flavor = 'latex'
+let g:livepreview_cursorhold_recompile = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Configure scheme for lightline"
