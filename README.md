@@ -45,8 +45,8 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 * Copy startup.conf to /etc/init/
 ---
 ### Shortcuts : 
-|Shortcut  | Action  |
-|---|---|---|
+| Shortcut  | Action  |
+|---|---|
 | \<C-T>  | toggle NetrwTree  |
 | \<leader>tt  |  toggle Terminal |   
 | \<leader>tn  |  create new Terminal |  
