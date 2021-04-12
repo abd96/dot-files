@@ -58,7 +58,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 | \<leader>gr  | FZF: jump to referemce | 
 | \<leader>gy  | FZF: jump to type defintion | 
 | \<leader>gi  | FZF: jump to implementation | 
-| \<C-p> :GFiles | FZF: GitFiles |  
+| \<C-p>  | FZF: GitFiles |  
 | \<TAB> | COC: navigate suggestions or jump forward and backward in snippets |
 | \<C-q> | add snippet | 
 | \<leader>f | auto format highlighted code | 
