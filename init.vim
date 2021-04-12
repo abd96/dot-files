@@ -68,8 +68,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'  
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
-    Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'SirVer/ultisnips'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "terminal size and splitting "
@@ -166,12 +166,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"SNIPPETS Settings"
+"snippets Settings"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Change mapping 
 let g:UltiSnipsExpandTrigger="<c-q>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 "FZF Settings" 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
