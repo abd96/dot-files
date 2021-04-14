@@ -47,7 +47,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 ### Shortcuts : 
 | Shortcut  | Action  |
 |---|---|
-| \<C-T>  | toggle NetrwTree  |
+| \<C-E>  | toggle NetrwTree  |
 | \<leader>tt  |  toggle Terminal |   
 | \<leader>tn  |  create new Terminal |  
 | \<leader>to  |  open terminal  |
