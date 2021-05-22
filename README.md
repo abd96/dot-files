@@ -45,9 +45,9 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 * Copy startup.conf to /etc/init/
 ---
 ### Shortcuts : 
-|Shortcut  | Action  |
-|---|---|---|
-| \<C-T>  | toggle NetrwTree  |
+| Shortcut  | Action  |
+|---|---|
+| \<C-E>  | toggle NetrwTree  |
 | \<leader>tt  |  toggle Terminal |   
 | \<leader>tn  |  create new Terminal |  
 | \<leader>to  |  open terminal  |
@@ -58,7 +58,7 @@ fzf, coc, goyo, markdown-preview, vim-latex-live-preview and more!
 | \<leader>gr  | FZF: jump to referemce | 
 | \<leader>gy  | FZF: jump to type defintion | 
 | \<leader>gi  | FZF: jump to implementation | 
-| \<C-p> :GFiles | FZF: GitFiles |  
+| \<C-p>  | FZF: GitFiles |  
 | \<TAB> | COC: navigate suggestions or jump forward and backward in snippets |
 | \<C-q> | add snippet | 
 | \<leader>f | auto format highlighted code | 
