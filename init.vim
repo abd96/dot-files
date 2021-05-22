@@ -24,7 +24,12 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell Checker 
+set spelllang=de_de,en
+nnoremap <silent> <F9> :set spell!<cr>
+inoremap <silent> <F9> <C-O>:set spell!<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleNetrw()
     if g:NetrwIsOpen
         let i = bufnr("$")
