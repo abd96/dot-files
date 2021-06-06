@@ -74,12 +74,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
     Plug 'honza/vim-snippets'
-    Plug 'SirVer/ultisnipsFoilgen '
+    Plug 'SirVer/ultisnips'
     Plug 'simeji/winresizer'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Resize Mode 
-let g:winresizer_start_key = '<C-Z>'
 "terminal size and splitting "
 set nocompatible
 filetype off 
@@ -173,6 +171,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Resize Mode 
+let g:winresizer_start_key = '<C-Z>'
 
 "snippets Settings"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
