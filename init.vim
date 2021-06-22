@@ -10,7 +10,7 @@ set nowrap
 set smartcase
 set noswapfile
 set incsearch
-set colorcolumn=80
+" set colorcolumn=80
 set relativenumber
 set hidden 
 set scrolloff=8
