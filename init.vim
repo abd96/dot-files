@@ -76,6 +76,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'SirVer/ultisnips'
     Plug 'simeji/winresizer'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "terminal size and splitting "
