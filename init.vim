@@ -51,16 +51,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
-    "Plug 'lervag/vimtex'
+    Plug 'lervag/vimtex'
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " LaTeX plugIn : Live Preview 
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     "Plug 'kassio/neoterm' " Neo terminal 
     "Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
     "Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion : Autocompletion and more 
     "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder 
     "Plug 'junegunn/fzf.vim'
     "Plug 'itchyny/lightline.vim' " a fancy bar to show current file path and neo vim mode 
-    "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " LaTeX plugIn : Live Preview 
     "Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'  
-    "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     "Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Plug 'nvim-treesitter/playground'
@@ -76,7 +76,7 @@ source ~/Projects/dot-files/nvim/gruvbox-config.vim
 source ~/Projects/dot-files/nvim/telescope-config.vim
 source ~/Projects/dot-files/nvim/completion-config.vim
 source ~/Projects/dot-files/nvim/winresizer-config.vim
-
+source ~/Projects/dot-files/nvim/tex-config.vim
 
 "" show hover doc
 nnoremap <silent>K :Lspsaga hover_doc<CR>
