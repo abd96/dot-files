@@ -22,20 +22,35 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell Checker 
 set spelllang=de_de,en
 nnoremap <silent> <F9> :set spell!<cr>
 inoremap <silent> <F9> <C-O>:set spell!<cr>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Define the leader key "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""Define the leader key "
 let mapleader = " "
-
-"Vim Plug"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+""Vim Plug"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
     Plug 'gruvbox-community/gruvbox'
-    "Plug 'tpope/vim-surround'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'glepnir/lspsaga.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-lua/completion-nvim'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'simeji/winresizer'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+    Plug 'hoob3rt/lualine.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
     "Plug 'lervag/vimtex'
     "Plug 'kassio/neoterm' " Neo terminal 
     "Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
@@ -47,38 +62,30 @@ call plug#begin('~/.vim/plugged')
     "Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'  
     "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     "Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
-    "Plug 'honza/vim-snippets'
-    "Plug 'SirVer/ultisnips'
-    "Plug 'simeji/winresizer'
-    "Plug 'jiangmiao/auto-pairs'
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Plug 'nvim-treesitter/playground'
-    "Plug 'neovim/nvim-lspconfig'
-    Plug 'kyazdani42/nvim-web-devicons' " for file icons
-    Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
-    Plug 'glepnir/lspsaga.nvim'
-    Plug 'hrsh7th/vim-vsnip'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'hoob3rt/lualine.nvim'
-    Plug 'ryanoasis/vim-devicons'
+    "Plug 'nvim-lua/completion-nvim'
+    "Plug 'kabouzeid/nvim-lspinstall'
 call plug#end()
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Plugin Configurations  
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"" Plugin Configurations  
 source ~/Projects/dot-files/nvim/nvim-tree-config.vim
 source ~/Projects/dot-files/nvim/lsp-config.vim
 source ~/Projects/dot-files/nvim/gruvbox-config.vim
-source ~/Projects/dot-files/nvim/lspsaga-config.vim
 source ~/Projects/dot-files/nvim/telescope-config.vim
+source ~/Projects/dot-files/nvim/completion-config.vim
+source ~/Projects/dot-files/nvim/winresizer-config.vim
 
-" Compe 
+
+"" show hover doc
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+
+"" Compe 
 lua require("init")
-luafile ~/Projects/dot-files/lua/compe-config.lua
-luafile ~/Projects/dot-files/lua/language-requires.lua
+""luafile ~/Projects/dot-files/lua/compe-config.lua
+luafile ~/Projects/dot-files/lua/lsp-config.lua
 luafile ~/Projects/dot-files/lua/lspsaga-config.lua
-luafile ~/Projects/dot-files/lua/telescope-config.lua
+"luafile ~/Projects/dot-files/lua/telescope-config.lua
 luafile ~/Projects/dot-files/lua/lualine-config.lua
+" luafile ~/Projects/dot-files/lua/completion-config.lua
