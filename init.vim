@@ -31,6 +31,7 @@ inoremap <silent> <F9> <C-O>:set spell!<cr>
 ""Define the leader key "
 let mapleader = " "
 "
+"Background transperanc"
 ""Vim Plug"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -64,7 +65,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " Server for live preview while making website 
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Plug 'nvim-treesitter/playground'
-    "Plug 'nvim-lua/completion-nvim'
+    
     "Plug 'kabouzeid/nvim-lspinstall'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,3 +90,4 @@ luafile ~/Projects/dot-files/lua/lspsaga-config.lua
 "luafile ~/Projects/dot-files/lua/telescope-config.lua
 luafile ~/Projects/dot-files/lua/lualine-config.lua
 " luafile ~/Projects/dot-files/lua/completion-config.lua
+"
