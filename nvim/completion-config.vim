@@ -12,3 +12,4 @@ let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+let g:completion_trigger_on_delete = 1

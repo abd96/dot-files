@@ -55,6 +55,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " LaTeX plugIn : Live Preview 
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
+    Plug 'kabouzeid/nvim-lspinstall'
     "Plug 'kassio/neoterm' " Neo terminal 
     "Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
     "Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion : Autocompletion and more 
