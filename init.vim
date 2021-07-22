@@ -22,6 +22,9 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
+set clipboard=unnamedplus               " Copy paste between vim and everything else
+set mouse=a                             " Enable your mouse
+set cursorline                          " Enable highlighting of the current line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell Checker 
 set spelllang=de_de,en
@@ -30,6 +33,17 @@ inoremap <silent> <F9> <C-O>:set spell!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""Define the leader key "
 let mapleader = " "
+" Use alt + hjkl to resize windows
+nnoremap <M-j>    :resize -2<CR>
+nnoremap <M-k>    :resize +2<CR>
+nnoremap <M-h>    :vertical resize -2<CR>
+nnoremap <M-l>    :vertical resize +2<CR>
+
+" Better window navigation 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 "
 "Background transperanc"
 ""Vim Plug"
@@ -91,4 +105,5 @@ luafile ~/Projects/dot-files/lua/lspsaga-config.lua
 "luafile ~/Projects/dot-files/lua/telescope-config.lua
 luafile ~/Projects/dot-files/lua/lualine-config.lua
 " luafile ~/Projects/dot-files/lua/completion-config.lua
+"
 "
