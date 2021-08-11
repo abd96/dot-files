@@ -1,5 +1,5 @@
 " Find files using Telescope command-line sugar.
-nnoremap <C-f> <cmd>Telescope file_browser<cr>
+" nnoremap <C-f> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -9,6 +9,7 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 
 lua << EOF
 require('telescope').setup{
@@ -37,7 +38,7 @@ require('telescope').setup{
         mirror = false,
       },
     },
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_sorter =  require'telescope.sorters'.get_fzy_sorter,
     file_ignore_patterns = {'.*%.csv', '.*%.pickle', '.*%.pyc', '.*%.pkl'},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
@@ -89,4 +90,8 @@ require('telescope').setup {
     buffer_previewer_maker = new_maker,
   }
 }
-EOF
+
+
+package.path = package.path .. '/home/abdul/Projects/dot-files/lua/'
+-- pff is under ~/.config/nvim/lua 
+vim.api.nvim_set_keymap('', '<C-f>', "<Cmd>lua require('pff').parent_find_files(0)<CR>", { noremap=true, silent=true} )
