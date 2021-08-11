@@ -34,8 +34,8 @@ inoremap <silent> <F9> <C-O>:set spell!<cr>
 ""Define the leader key "
 let mapleader = " "
 " Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
+nnoremap <M-k>    :resize -2<CR>
+nnoremap <M-j>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
@@ -44,8 +44,18 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"
-"Background transperanc"
+
+" Some remaps 
+nnoremap n nzzzv 
+nnoremap N Nzzzv 
+" Done Undo everything 
+
+inoremap . .<c-g>u
+inoremap , ,<c-g>u 
+inoremap ? ?<c-g>u
+inoremap ! !<c-g>u
+" Moving text 
+" Background transperanc"
 ""Vim Plug"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -107,3 +117,5 @@ luafile ~/Projects/dot-files/lua/lualine-config.lua
 " luafile ~/Projects/dot-files/lua/completion-config.lua
 "
 "
+" Fix E523: Not allowed here 
+autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
