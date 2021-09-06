@@ -5,7 +5,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set nowrap
+set wrap
 set smartcase
 set noswapfile
 set incsearch
@@ -22,7 +22,7 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 14
 let g:NetrwIsOpen=0
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard+=unnamedplus               " Copy paste between vim and everything else
 set mouse=a                             " Enable your mouse
 set cursorline                          " Enable highlighting of the current line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
