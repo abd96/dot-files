@@ -121,3 +121,6 @@ xset r rate 250 45
 export M2_HOME=/home/abdul/Downloads/apache-maven-3.8.1-bin/apache-maven-3.8.1
 export M2=$M2_HOME/bin 
 export PATH=$M2:$PATH
+
+# Gruvbox theme 
+source .zsh-theme-gruvbox-material-dark

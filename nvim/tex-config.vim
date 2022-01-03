@@ -6,6 +6,7 @@ let g:coc_disable_startup_warning = 1
 "noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 map F :LLPStartPreview <CR><CR>
 "map <F10> :!pdflatex % && start %:r.pdf<CR>"
+" let g:livepreview_engine = 'lualatex'
 let g:tex_flavor = 'latex'
 let g:livepreview_cursorhold_recompile = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
