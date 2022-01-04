@@ -5,7 +5,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set wrap
+set nowrap
 set smartcase
 set noswapfile
 set incsearch
@@ -80,6 +80,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " LaTeX plugIn : Live Preview 
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " Markdown live preview
     Plug 'kabouzeid/nvim-lspinstall'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'akinsho/flutter-tools.nvim'
     "Plug 'kassio/neoterm' " Neo terminal 
     "Plug 'junegunn/goyo.vim' " Goyo for showing clean view (centered)
     "Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion : Autocompletion and more 
@@ -96,13 +98,14 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "" Plugin Configurations  
-source ~/Projects/dot-files/nvim/nvim-tree-config.vim
-source ~/Projects/dot-files/nvim/lsp-config.vim
-source ~/Projects/dot-files/nvim/gruvbox-config.vim
-source ~/Projects/dot-files/nvim/telescope-config.vim
-source ~/Projects/dot-files/nvim/completion-config.vim
-source ~/Projects/dot-files/nvim/winresizer-config.vim
-source ~/Projects/dot-files/nvim/tex-config.vim
+""  ~/Projects/dot-files/
+source ./nvim/nvim-tree-config.vim
+source ./nvim/lsp-config.vim
+source ./nvim/gruvbox-config.vim
+source ./nvim/telescope-config.vim
+source ./nvim/completion-config.vim
+source ./nvim/winresizer-config.vim
+source ./nvim/tex-config.vim
 
 "" show hover doc
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -110,10 +113,11 @@ nnoremap <silent>K :Lspsaga hover_doc<CR>
 "" Compe 
 lua require("init")
 ""luafile ~/Projects/dot-files/lua/compe-config.lua
-luafile ~/Projects/dot-files/lua/lsp-config.lua
-luafile ~/Projects/dot-files/lua/lspsaga-config.lua
+luafile ./lua/lsp-config.lua
+luafile ./lua/lspsaga-config.lua
 "luafile ~/Projects/dot-files/lua/telescope-config.lua
-luafile ~/Projects/dot-files/lua/lualine-config.lua
+luafile ./lua/lualine-config.lua
+luafile ./lua/dart-config.lua
 " luafile ~/Projects/dot-files/lua/completion-config.lua
 "
 "
